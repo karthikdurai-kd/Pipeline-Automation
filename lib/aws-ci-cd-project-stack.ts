@@ -19,7 +19,6 @@ export class AwsCiCdProjectStack extends cdk.Stack {
           "main"
         ),
         commands: ["cd AWS-CI-CD-Project", "npm ci", "npx cdk synth"],
-        primaryOutputDirectory: "AWS-CI-CD-Project/cdk.out",
       }),
     });
   }
