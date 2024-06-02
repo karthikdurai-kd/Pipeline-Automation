@@ -19,6 +19,7 @@ export class AwsCiCdProjectStack extends cdk.Stack {
           "main"
         ),
         commands: ["cd Pipeline-Automation", "npm ci", "npx cdk synth"],
+        primaryOutputDirectory: "Pipeline-Automation/cdk.out",
       }),
     });
   }
