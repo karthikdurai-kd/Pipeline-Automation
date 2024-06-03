@@ -18,7 +18,7 @@ export class AwsCiCdProjectStack extends cdk.Stack {
           "karthikdurai-kd/Pipeline-Automation",
           "main"
         ),
-        commands: ["npm ci", "npx cdk synth"],
+        commands: ["npm ci", "npm run build", "npx cdk synth"],
       }),
     });
   }
