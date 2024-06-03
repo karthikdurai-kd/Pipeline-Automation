@@ -18,8 +18,7 @@ export class AwsCiCdProjectStack extends cdk.Stack {
           "karthikdurai-kd/Pipeline-Automation",
           "main"
         ),
-        commands: ["cd Pipeline-Automation", "npm ci", "npx cdk synth"],
-        primaryOutputDirectory: "Pipeline-Automation/cdk.out",
+        commands: ["cd AWS-CI-CD-Project", "npm ci", "npx cdk synth"],
       }),
     });
   }
