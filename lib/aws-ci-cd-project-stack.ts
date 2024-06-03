@@ -1,5 +1,6 @@
 import * as cdk from "aws-cdk-lib";
 import {
+  CodeBuildStep,
   CodePipeline,
   CodePipelineSource,
   ShellStep,
@@ -27,6 +28,13 @@ export class AwsCiCdProjectStack extends cdk.Stack {
     const testStage = pipeline.addStage(
       new PipelineStage(this, "PipelineTestStage", {
         stageName: "test",
+      })
+    );
+
+    // Unit Testing "PipelineTestStage" before the deployment
+    testStage.addPre(
+      new CodeBuildStep("unit test", {
+        commands: ["npm ci", "npm test"],
       })
     );
   }
