@@ -19,6 +19,7 @@ export class AwsCiCdProjectStack extends cdk.Stack {
           "main"
         ),
         commands: ["npm ci", "npx cdk synth"],
+        primaryOutputDirectory: "cdk.out",
       }),
     });
   }
